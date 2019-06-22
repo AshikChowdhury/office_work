@@ -18,15 +18,17 @@ Route::get('/', function () {
         return redirect('install');
     }
 
-    return (new App\Http\Controllers\Front\HomeController())->index();
-})->name('front.home');
-
-Route::group(
-    ['namespace' => 'Front', 'as' => 'front.'], function () {
-    Route::post('/contact-us', 'HomeController@contactUs')->name('contact-us');
-    Route::resource('/signup', 'RegisterController', ['only' => ['index', 'store']]);
-    Route::get('/email-verification/{code}', 'RegisterController@getEmailVerification')->name('get-email-verification');
+    return (new App\Http\Controllers\Auth\LoginController())->showLoginForm();
 });
+//return (new App\Http\Controllers\Auth\LoginController())->showLoginForm();
+//})->name('front.home');
+
+//Route::group(
+//    ['namespace' => 'Front', 'as' => 'front.'], function () {
+//    Route::post('/contact-us', 'HomeController@contactUs')->name('contact-us');
+//    Route::resource('/signup', 'RegisterController', ['only' => ['index', 'store']]);
+//    Route::get('/email-verification/{code}', 'RegisterController@getEmailVerification')->name('get-email-verification');
+//});
 
 
  //Paypal IPN

@@ -87,12 +87,12 @@ class ManageTasksController extends AdminBaseController
 
         // Send notification to user
         $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
-        $notifyUser->notify(new NewTask($task));
+//        $notifyUser->notify(new NewTask($task));
 
         if($task->project_id != null){
             if($task->project->client_id != null && $task->project->allow_client_notification == 'enable') {
                 $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->project->client_id);
-                $notifyUser->notify(new NewClientTask($task));
+//                $notifyUser->notify(new NewClientTask($task));
             }
          }
 
@@ -171,12 +171,12 @@ class ManageTasksController extends AdminBaseController
 
         //  Send notification to user
         $notifyUser = User::findOrFail($request->user_id);
-        $notifyUser->notify(new TaskUpdated($task));
+//        $notifyUser->notify(new TaskUpdated($task));
 
         if($task->project_id != null){
             if($task->project->client_id != null && $task->project->allow_client_notification == 'enable') {
                 $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->project->client_id);
-                $notifyUser->notify(new TaskUpdatedClient($task));
+//                $notifyUser->notify(new TaskUpdatedClient($task));
             }
         }
 
@@ -215,18 +215,18 @@ class ManageTasksController extends AdminBaseController
 
             // send task complete notification
             $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->user_id);
-            $notifyUser->notify(new TaskCompleted($task));
+//            $notifyUser->notify(new TaskCompleted($task));
 
             if($task->project_id != null){
                 if($task->project->client_id != null  && $task->project->allow_client_notification == 'enable') {
                     $notifyClient = User::findOrFail($task->project->client_id);
-                    $notifyClient->notify(new TaskCompleted($task));
+//                    $notifyClient->notify(new TaskCompleted($task));
                 }
             }
 
             $admins = User::allAdmins($task->user_id);
 
-            Notification::send($admins, new TaskCompleted($task));
+//            Notification::send($admins, new TaskCompleted($task));
         }else{
             $task->completed_on = null;
         }

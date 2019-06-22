@@ -153,14 +153,14 @@
                                     <!--/span-->
                                 </div>
                                 <!--/row-->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="gst_number">@lang('app.gstNumber')</label>
-                                            <input type="text" id="gst_number" name="gst_number" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-6">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label for="gst_number">@lang('app.gstNumber')</label>--}}
+{{--                                            <input type="text" id="gst_number" name="gst_number" class="form-control" value="">--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <!--/row-->
 
                                 <div class="row">

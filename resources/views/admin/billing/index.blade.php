@@ -58,7 +58,7 @@
                                 Annual Price
                             </div>
                             <div class="col-sm-3">
-                                ${{ $company->package->annual_price }}
+                                ৳t {{ $company->package->annual_price }}
                             </div>
                         </div>
                         <div class="row f-15 m-b-10">
@@ -66,7 +66,7 @@
                                 Monthly Price
                             </div>
                             <div class="col-sm-3">
-                                ${{ $company->package->monthly_price }}
+                                ৳ {{ $company->package->monthly_price }}
                             </div>
                         </div>
                         <div class="row f-15 m-b-10">

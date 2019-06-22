@@ -10,6 +10,9 @@ use Zizaco\Entrust\Entrust;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * @method static withoutGlobalScope(string $string)
+ */
 class User extends Authenticatable
 {
     use Notifiable, EntrustUserTrait;

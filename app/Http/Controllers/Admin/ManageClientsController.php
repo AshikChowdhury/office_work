@@ -105,10 +105,10 @@ class ManageClientsController extends AdminBaseController
         $user->attachRole($role->id);
 
 
-        if($this->emailSetting[0]->send_email == 'yes'){
-            //send welcome email notification
-            $user->notify(new NewUser($request->input('password')));
-        }
+//        if($this->emailSetting[0]->send_email == 'yes'){
+//            //send welcome email notification
+//            $user->notify(new NewUser($request->input('password')));
+//        }
 
         //log search
         $this->logSearchEntry($user->id, $user->name, 'admin.clients.edit');

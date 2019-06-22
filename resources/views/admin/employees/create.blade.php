@@ -86,17 +86,17 @@
 
                                 <div class="row">
 
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label class="control-label"><i class="fa fa-slack"></i> @lang('modules.employees.slackUsername')</label>
-                                            <div class="input-group"> <span class="input-group-addon">@</span>
-                                                <input autocomplete="nope" type="text" id="slack_username" name="slack_username" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
+{{--                                    <div class="col-md-3">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="control-label"><i class="fa fa-slack"></i> @lang('modules.employees.slackUsername')</label>--}}
+{{--                                            <div class="input-group"> <span class="input-group-addon">@</span>--}}
+{{--                                                <input autocomplete="nope" type="text" id="slack_username" name="slack_username" class="form-control">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                     <!--/span-->
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>@lang('modules.employees.joiningDate')</label>
                                             <input type="text" autocomplete="off"  name="joining_date" id="joining_date" class="form-control">
@@ -104,14 +104,14 @@
                                     </div>
                                     <!--/span-->
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>@lang('modules.employees.lastDate')</label>
                                             <input type="text" autocomplete="off" name="last_date" id="end_date" class="form-control">
                                         </div>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>@lang('modules.employees.gender')</label>
                                             <select name="gender" id="gender" class="form-control">
@@ -156,7 +156,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('modules.employees.hourlyRate')</label>
+{{--                                            <label>@lang('modules.employees.hourlyRate')</label>--}}
+                                            <label>Salary</label>
                                             <input type="text" name="hourly_rate" id="hourly_rate" class="form-control">
                                         </div>
                                     </div>

@@ -136,15 +136,15 @@
                 <ul class="nav nav-second-level">
                     <li><a href="{{ route('admin.task-report.index') }}">@lang('app.menu.taskReport')</a></li>
                     <li><a href="{{ route('admin.time-log-report.index') }}">@lang('app.menu.timeLogReport')</a></li>
-                    <li><a href="{{ route('admin.finance-report.index') }}">@lang('app.menu.financeReport')</a></li>
-                    <li><a href="{{ route('admin.income-expense-report.index') }}">@lang('app.menu.incomeVsExpenseReport')</a></li>
+{{--                    <li><a href="{{ route('admin.finance-report.index') }}">@lang('app.menu.financeReport')</a></li>--}}
+{{--                    <li><a href="{{ route('admin.income-expense-report.index') }}">@lang('app.menu.incomeVsExpenseReport')</a></li>--}}
                     <li><a href="{{ route('admin.leave-report.index') }}">@lang('app.menu.leaveReport')</a></li>
                 </ul>
             </li>
             @endif
             @role('admin')
-            <li><a href="{{ route('admin.billing') }}" class="waves-effect"><i class="icon-book-open"></i> <span class="hide-menu"> @lang('app.menu.billing')</span></a>
-            </li>
+{{--            <li><a href="{{ route('admin.billing') }}" class="waves-effect"><i class="icon-book-open"></i> <span class="hide-menu"> @lang('app.menu.billing')</span></a>--}}
+{{--            </li>--}}
             @endrole
             @if($company->status != 'license_expired')
                 <li><a href="{{ route('admin.settings.index') }}" class="waves-effect"><i class="ti-settings"></i> <span class="hide-menu"> @lang('app.menu.settings')</span></a>

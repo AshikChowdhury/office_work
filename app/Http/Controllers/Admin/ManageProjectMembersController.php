@@ -60,7 +60,7 @@ class ManageProjectMembersController extends AdminBaseController
             $member->save();
 
             $notifyUser = User::withoutGlobalScope('active')->findOrFail($user);
-            $notifyUser->notify(new NewProjectMember($member));
+//            $notifyUser->notify(new NewProjectMember($member));
 
             $this->logProjectActivity($request->project_id, ucwords($member->user->name).' '.__('messages.isAddedAsProjectMember'));
         }
