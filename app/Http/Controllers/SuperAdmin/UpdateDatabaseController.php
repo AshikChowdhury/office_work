@@ -20,21 +20,21 @@ class UpdateDatabaseController extends SuperAdminBaseController
     public function index(){
         // show new update notice
 //        $lastVersion = file_get_contents(config('laraupdater.update_baseurl').'/laraupdater.json');
-        $client = new Client();
-        $res = $client->request('GET', config('laraupdater.update_baseurl').'/laraupdater.json', ['verify' => false]);
-        $lastVersion = $res->getBody();
-        $lastVersion = json_decode($lastVersion, true);
-
-        if ( $lastVersion['version'] > File::get(public_path().'/version.txt') ){
-            $this->lastVersion = $lastVersion['version'];
-            $this->updateInfo = $lastVersion['description'];
-        }
-        $this->updateInfo = $lastVersion['description'];
-
-        $this->worksuiteVersion = File::get(public_path().'/version.txt');
-        $laravel = app();
-        $this->laravelVersion = $laravel::VERSION;
-        return view('super-admin.update-database.index', $this->data);
+//        $client = new Client();
+//        $res = $client->request('GET', config('laraupdater.update_baseurl').'/laraupdater.json', ['verify' => false]);
+//        $lastVersion = $res->getBody();
+//        $lastVersion = json_decode($lastVersion, true);
+//
+//        if ( $lastVersion['version'] > File::get(public_path().'/version.txt') ){
+//            $this->lastVersion = $lastVersion['version'];
+//            $this->updateInfo = $lastVersion['description'];
+//        }
+////        $this->updateInfo = $lastVersion['description'];
+//
+////        $this->worksuiteVersion = File::get(public_path().'/version.txt');
+////        $laravel = app();
+////        $this->laravelVersion = $laravel::VERSION;
+//        return view('super-admin.update-database.index', $this->data);
     }
 
     public function store(){

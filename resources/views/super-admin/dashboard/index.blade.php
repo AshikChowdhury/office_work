@@ -39,12 +39,12 @@
 
 @section('content')
     <div class="row">
-            @if(isset($lastVersion))
-            <div class="alert alert-info col-md-12">
-                <div class="col-md-10"><i class="ti-gift"></i> @lang('modules.update.newUpdate') <label class="label label-success">{{ $lastVersion }}</label></div>
-                <div class="col-md-2"><a href="{{ route('super-admin.update-settings.index') }}" class="btn btn-success btn-small">@lang('modules.update.updateNow') <i class="fa fa-arrow-right"></i></a></div>
-            </div>
-            @endif
+{{--            @if(isset($lastVersion))--}}
+{{--            <div class="alert alert-info col-md-12">--}}
+{{--                <div class="col-md-10"><i class="ti-gift"></i> @lang('modules.update.newUpdate') <label class="label label-success">{{ $lastVersion }}</label></div>--}}
+{{--                <div class="col-md-2"><a href="{{ route('super-admin.update-settings.index') }}" class="btn btn-success btn-small">@lang('modules.update.updateNow') <i class="fa fa-arrow-right"></i></a></div>--}}
+{{--            </div>--}}
+{{--            @endif--}}
             
         <div class="col-md-3 col-sm-6">
             <div class="white-box">

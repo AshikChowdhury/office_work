@@ -286,8 +286,10 @@ class HolidaysController extends AdminBaseController
 
         $this->holidays = $this->missing_number(json_decode($attandanceSetting->office_open_days));
         $holidaysArray = [];
+
         foreach($this->holidays as $index => $holiday){
             $holidaysArray[$holiday] = $this->days[$holiday-1];
+
         }
         $this->holidaysArray = $holidaysArray;
 

@@ -106,12 +106,12 @@ class SuperAdminDashboardController extends SuperAdminBaseController
         //get latest update
         $client = new Client();
         $res = $client->request('GET', config('laraupdater.update_baseurl').'/laraupdater.json', ['verify' => false]);
-        $lastVersion = $res->getBody();
-        $lastVersion = json_decode($lastVersion, true);
-
-        if ( $lastVersion['version'] > File::get(public_path().'/version.txt') ){
-            $this->lastVersion = $lastVersion['version'];
-        }
+//        $lastVersion = $res->getBody();
+//        $lastVersion = json_decode($lastVersion, true);
+//
+//        if ( $lastVersion['version'] > File::get(public_path().'/version.txt') ){
+//            $this->lastVersion = $lastVersion['version'];
+//        }
 
         return view('super-admin.dashboard.index', $this->data);
     }

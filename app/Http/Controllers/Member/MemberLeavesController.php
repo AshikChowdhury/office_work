@@ -77,13 +77,13 @@ class MemberLeavesController extends MemberBaseController
         }
 
         //      Send notification to user
-        $notifyUsers = User::allAdmins();
-        foreach ($notifyUsers as $notifyUser) {
-            $notifyUser->notify(new NewLeaveRequest($leave));
-        }
+//        $notifyUsers = User::allAdmins();
+//        foreach ($notifyUsers as $notifyUser) {
+//            $notifyUser->notify(new NewLeaveRequest($leave));
+//        }
 
-        $notifyLeavesUser = User::find($request->user_id);
-        $notifyLeavesUser->notify(new LeaveApplication($leave));
+//        $notifyLeavesUser = User::find($request->user_id);
+//        $notifyLeavesUser->notify(new LeaveApplication($leave));
 
         return Reply::redirect(route('member.leaves.index'), __('messages.leaveAssignSuccess'));
     }
