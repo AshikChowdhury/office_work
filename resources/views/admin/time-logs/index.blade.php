@@ -274,7 +274,7 @@
                             <th>@lang('modules.timeLogs.startTime')</th>
                             <th>@lang('modules.timeLogs.endTime')</th>
                             <th>@lang('modules.timeLogs.totalHours')</th>
-                            <th>@lang('app.earnings')</th>
+{{--                            <th>@lang('app.earnings')</th>--}}
                             <th>@lang('modules.timeLogs.memo')</th>
                             <th>@lang('app.action')</th>
                         </tr>
@@ -422,7 +422,7 @@
                 { data: 'start_time', name: 'start_time' },
                 { data: 'end_time', name: 'end_time' },
                 { data: 'total_hours', name: 'total_hours' },
-                { data: 'earnings', name: 'earnings' },
+                // { data: 'earnings', name: 'earnings' },
                 { data: 'memo', name: 'memo' },
                 { data: 'action', name: 'action', "searchable": false }
             ]

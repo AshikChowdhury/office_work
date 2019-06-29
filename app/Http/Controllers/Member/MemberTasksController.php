@@ -98,8 +98,8 @@ class MemberTasksController extends MemberBaseController
         $task->save();
 
 //      Send notification to user
-        $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
-        $notifyUser->notify(new NewTask($task));
+//        $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
+//        $notifyUser->notify(new NewTask($task));
 
         $this->logProjectActivity($request->project_id, __('messages.newTaskAddedToTheProject'));
 
@@ -178,8 +178,8 @@ class MemberTasksController extends MemberBaseController
         $task->save();
 
         //Send notification to user
-        $notifyUser = User::findOrFail($request->user_id);
-        $notifyUser->notify(new TaskUpdated($task));
+//        $notifyUser = User::findOrFail($request->user_id);
+//        $notifyUser->notify(new TaskUpdated($task));
 
         //calculate project progress if enabled
         $this->calculateProjectProgress($request->project_id);
@@ -225,8 +225,8 @@ class MemberTasksController extends MemberBaseController
                 $task->save();
                 
                 // send task complete notification
-                $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->user_id);
-                $notifyUser->notify(new TaskCompleted($task));
+//                $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->user_id);
+//                $notifyUser->notify(new TaskCompleted($task));
 
                 $admins = User::allAdmins($task->user_id);
 

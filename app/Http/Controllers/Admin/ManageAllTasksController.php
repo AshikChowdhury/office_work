@@ -183,27 +183,27 @@ class ManageAllTasksController extends AdminBaseController
         if($oldStatus->slug == 'incomplete'  && $taskBoardColumn->slug == 'completed'){
             // notify user
             $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
-            $notifyUser->notify(new TaskCompleted($task));
+//            $notifyUser->notify(new TaskCompleted($task));
 
             if($task->project_id != null){
                 if($task->project->client_id != null  && $task->project->allow_client_notification == 'enable') {
                     //calculate project progress if enabled
                     $this->calculateProjectProgress($request->project_id);
-                    $notifyClient = User::findOrFail($task->project->client_id);
-                    $notifyClient->notify(new TaskCompleted($task));
+//                    $notifyClient = User::findOrFail($task->project->client_id);
+//                    $notifyClient->notify(new TaskCompleted($task));
                 }
             }
         }else{
             //Send notification to user
-            $notifyUser = User::findOrFail($request->user_id);
-            $notifyUser->notify(new TaskUpdated($task));
+//            $notifyUser = User::findOrFail($request->user_id);
+//            $notifyUser->notify(new TaskUpdated($task));
 
             if($task->project_id != null){
                 if($task->project->client_id != null && $task->project->allow_client_notification == 'enable') {
                     //calculate project progress if enabled
                     $this->calculateProjectProgress($request->project_id);
                     $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->project->client_id);
-                    $notifyUser->notify(new TaskUpdatedClient($task));
+//                    $notifyUser->notify(new TaskUpdatedClient($task));
                 }
             }
         }
@@ -268,12 +268,12 @@ class ManageAllTasksController extends AdminBaseController
 
 //      Send notification to user
         $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
-        $notifyUser->notify(new NewTask($task));
+//        $notifyUser->notify(new NewTask($task));
 
         if($task->project_id != null){
             if($task->project->client_id != null && $task->project->allow_client_notification == 'enable') {
                 $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->project->client_id);
-                $notifyUser->notify(new NewClientTask($task));
+//                $notifyUser->notify(new NewClientTask($task));
             }
         }
 
@@ -302,7 +302,7 @@ class ManageAllTasksController extends AdminBaseController
 
         // Send  reminder notification to user
         $notifyUser = $task->user;
-        $notifyUser->notify(new TaskReminder($task));
+//        $notifyUser->notify(new TaskReminder($task));
 
         return Reply::success('messages.reminderMailSuccess');
     }

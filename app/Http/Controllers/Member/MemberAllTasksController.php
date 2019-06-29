@@ -222,7 +222,7 @@ class MemberAllTasksController extends MemberBaseController
             }else{
                 $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
             }
-            $notifyUser->notify(new TaskCompleted($task));
+//            $notifyUser->notify(new TaskCompleted($task));
         }
         else{
             if(!$this->user->can('add_tasks') && $this->global->task_self == 'yes'){
@@ -231,7 +231,7 @@ class MemberAllTasksController extends MemberBaseController
                 $notifyUser = User::findOrFail($request->user_id);
             }
             //Send notification to user
-            $notifyUser->notify(new TaskUpdated($task));
+//            $notifyUser->notify(new TaskUpdated($task));
         }
 
         if($request->project_id){
@@ -285,12 +285,13 @@ class MemberAllTasksController extends MemberBaseController
 
         // Send  reminder notification to user
         $notifyUser = $task->user;
-        $notifyUser->notify(new TaskReminder($task));
+//        $notifyUser->notify(new TaskReminder($task));
 
         return Reply::success('messages.reminderMailSuccess');
     }
 
     public function store(StoreTask $request) {
+
         $taskBoardColumn = TaskboardColumn::where('slug', 'incomplete')->first();
         $task = new Task();
         $task->heading = $request->heading;
@@ -325,13 +326,13 @@ class MemberAllTasksController extends MemberBaseController
         }else{
             $notifyUser = User::withoutGlobalScope('active')->findOrFail($request->user_id);
         }
-        $notifyUser->notify(new NewTask($task));
+//        $notifyUser->notify(new NewTask($task));
 
         if($task->project_id != null){
-            if($task->project->client_id != null && $task->project->allow_client_notification == 'enable') {
-                $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->project->client_id);
-                $notifyUser->notify(new NewClientTask($task));
-            }
+//            if($task->project->client_id != null && $task->project->allow_client_notification == 'enable') {
+//                $notifyUser = User::withoutGlobalScope('active')->findOrFail($task->project->client_id);
+//                $notifyUser->notify(new NewClientTask($task));
+//            }
         }
 
         if(!is_null($request->project_id)){
